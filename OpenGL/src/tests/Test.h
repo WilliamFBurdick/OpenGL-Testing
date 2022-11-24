@@ -5,15 +5,19 @@
 #include <string>
 #include <iostream>
 
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 namespace test {
 	class Test {
 	public:
 		Test() {}
 		virtual ~Test() {}
 
-		virtual void OnUpdate(float deltaTime) {}
+		virtual void OnUpdate(float deltaTime, GLFWwindow* window = NULL) {}
 		virtual void OnRender() {}
 		virtual void OnImGuiRender() {}
+		virtual void OnMouseMovement(float xOffset, float yOffset) {}
 
 	};
 
